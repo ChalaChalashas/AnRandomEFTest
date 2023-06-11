@@ -36,8 +36,7 @@ public class FolderService : IFolderService
 
     public IEnumerable<FolderDto> GetTree()
     {
-        return _context.Folders
-            .Where(x => x.ParentId == null)
-            .ProjectTo<FolderDto>(_mapper.ConfigurationProvider);
+        var query = _context.Folders.Where(x => x.ParentId == null);
+        return _mapper.ProjectTo<FolderDto>(query);
     }
 }

@@ -6,7 +6,7 @@ public class FolderMappingProfile : Profile
 {
     public FolderMappingProfile()
     {
-        CreateProjection<FolderEntity, FolderDto>();
+        CreateMap<FolderEntity, FolderDto>();
         CreateMap<FolderDto, FolderEntity>();
     }
 }
